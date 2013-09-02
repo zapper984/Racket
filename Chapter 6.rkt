@@ -12,3 +12,15 @@
 ;;6.1.4
 (text "6.1.4" 12 "black")
 (big-bang(circle 20 "solid" "green")(on-draw show-it 100 100))
+
+;;6.2.1
+(text "6.2.1" 12 "black")
+(big-bang (overlay pic:calendar (rectangle 100 100 "solid" "white"))
+(on-draw show-it)
+(on-tick rotate-cw 1/2))
+
+;;6.2.3
+(text "6.2.3" 12 "black")
+(big-bang (overlay pic:calendar (rectangle 100 100 "solid" "white"))
+(on-draw show-it)
+(on-tick flip-vertical 3/2))
