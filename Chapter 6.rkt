@@ -24,3 +24,31 @@
 (big-bang (overlay pic:calendar (rectangle 100 100 "solid" "white"))
 (on-draw show-it)
 (on-tick flip-vertical 3/2))
+
+;;6.4.2
+(define (move-down-5 picture)
+(above (rectangle 0 5 "solid" "white") picture))
+
+(text "6.4.2" 12 "black")
+(big-bang pic:calendar
+(on-draw show-it 30 400)
+(on-tick move-down-5 1/2))
+
+;;6.4.3
+(define (move-left-3 picture)
+(crop-left picture 3))
+
+(text "6.4.3" 12 "black")
+(big-bang pic:calendar
+(on-draw show-it 30 30)
+(on-tick move-left-3 1/2))
+
+;;6.4.30
+(define (times x)
+  (* x 2))
+
+(text "6.4.4" 12 "black")
+(define (xdouble x) (times x))
+(big-bang (circle 5 "solid" "red")
+(on-draw show-it 30 30)
+(on-tick move-left-3 1/2))
