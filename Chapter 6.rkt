@@ -44,11 +44,11 @@
 (on-tick move-left-3 1/2))
 
 ;;6.4.30
-(define (times x)
-  (* x 2))
+(define (cirlesMake pic)
+  (beside pic pic))
 
 (text "6.4.4" 12 "black")
-(define (xdouble x) (times x))
 (big-bang (circle 5 "solid" "red")
-(on-draw show-it 30 30)
-(on-tick move-left-3 1/2))
+(on-draw show-it 400 10)
+(on-tick cirlesMake 3))
+;;6.5.1
