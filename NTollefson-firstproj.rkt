@@ -6,20 +6,23 @@
 ;;9/28/2013
 ;;First Project
 
-(define topBarOutline
-  (underlay/offset
-  (rectangle 1280 20 "solid" "brown")
-  0 20
-  (crop-top (circle 60 "solid" "black") 60 )))
+(define outline
+  (beside
+   (beside
+    (beside
+     (rectangle 20 0 "solid" "white")
+     (rectangle 20 650 "solid" "gray"))
+   (above
+    (rectangle 300 300 "solid" "dimgray")
+    (rectangle 300 350 "solid" "black")))
+   (rectangle 20 650 "solid" "gray")))
 
-(define topBarIcons )
+(define screen 
+  (overlay/align "middle" "middle" 
+                 outline
+                 screen))
 
-(define topBar 
-  (underlay/offset 
-   topBarOutline
-   0 0
-   topBarIcons))
+(define calculator)
 
-(define hud topBar)
-(big-bang hud(on-draw show-it 1280 720 ))
+(big-bang calculator(on-draw show-it 400 700 ))
   
